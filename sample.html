@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magizhan Stores</title>
+  <meta name="description" content="Magizhan Stores — Fresh groceries, local & trusted" />
+  <style>
+    :root {
+      --bg:#fffdf8;
+      --accent:#ff6b35;
+      --muted:#7d6b5e;
+      --text:#362f28;
+      --logo-bg:#f7efe6;
+      --anim-duration:6s;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      height:100%;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .page{max-width:1000px;margin:0 auto;padding:16px}
+
+    header.header{
+      background: linear-gradient(180deg,var(--logo-bg), #fff);
+      border-radius:18px;
+      padding:30px 10px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(60,40,20,0.06);
+      display:flex;
+      align-items:center;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .logo-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:2}
+
+    .store-title{
+      font-weight:800;
+      letter-spacing:1px;
+      color:var(--text);
+      font-size:30px;
+      margin:0;
+      text-align:center;
+    }
+
+    .tagline{color:var(--muted);font-size:14px;text-align:center}
+
+    .orbit{
+      position:absolute;
+      left:50%;
+      top:14px;
+      transform:translateX(-50%);
+      width:100%;
+      max-width:760px;
+      height:220px;
+      pointer-events:none;
+      z-index:1;
+      opacity:0.98;
+    }
+
+    .g{position:absolute;width:78px;height:78px;transform-origin:50% 50%;filter:drop-shadow(0 8px 18px rgba(60,40,20,0.08));animation:floatA var(--anim-duration) ease-in-out infinite}
+    @keyframes floatA{0%{transform:translateY(0)}25%{transform:translateY(-10px)}50%{transform:translateY(0)}75%{transform:translateY(8px)}100%{transform:translateY(0)}}
+    .g1{left:5%;top:18%;animation-delay:-0.6s}
+    .g2{left:20%;top:62%;animation-delay:-1.2s}
+    .g3{left:42%;top:68%;animation-delay:-0.2s}
+    .g4{left:62%;top:62%;animation-delay:-0.9s}
+    .g5{left:84%;top:18%;animation-delay:-1.6s}
+    .g6{left:50%;top:6%;animation-delay:-0.05s}
+
+    .logo-mark{width:240px;height:120px;display:block}
+
+    main{margin-top:20px;padding:18px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(60,40,20,0.04)}
+    section{max-width:860px;margin:0 auto;padding:8px 6px}
+    h2{color:var(--accent);margin:6px 0;font-size:22px}
+    p{color:var(--muted);line-height:1.6;font-size:15px}
+
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
+      margin-top:16px;
+    }
+
+    .product-card{
+      background:#fffdf9;
+      border:1px solid #f0e6dc;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(60,40,20,0.05);
+      display:flex;
+      flex-direction:column;
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+    .product-card:hover{transform:translateY(-5px);box-shadow:0 6px 14px rgba(60,40,20,0.08)}
+
+    .product-img{width:100%;height:160px;object-fit:cover}
+    .product-body{padding:10px}
+    .product-title{font-weight:600;color:var(--text);font-size:16px;margin-bottom:4px}
+    .product-desc{font-size:14px;color:var(--muted);margin-bottom:6px}
+    .product-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+    .chip{background:var(--accent);color:#fff;padding:2px 8px;border-radius:8px;font-size:12px}
+
+    footer{text-align:center;color:var(--muted);font-size:13px;padding:18px;margin-top:20px}
+
+    @media (max-width:768px){
+      header.header{padding:24px 10px}
+      .store-title{font-size:24px}
+      .orbit{height:180px}
+      .product-img{height:130px}
+    }
+
+    @media (max-width:480px){
+      main{padding:12px}
+      .store-title{font-size:22px}
+      h2{font-size:18px}
+      p{font-size:14px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <div class="orbit" aria-hidden="true">
+        <div class="g g1"><svg viewBox="0 0 100 100"><rect x="8" y="28" width="84" height="54" rx="8" fill="#E9B17A"/></svg></div>
+        <div class="g g2"><svg viewBox="0 0 100 100"><rect x="36" y="18" width="28" height="56" rx="4" fill="#fff"/></svg></div>
+        <div class="g g3"><svg viewBox="0 0 100 100"><rect x="14" y="36" width="72" height="32" rx="4" fill="#F6DBB2"/></svg></div>
+        <div class="g g4"><svg viewBox="0 0 100 100"><path d="M28 72 L76 28" stroke="#FF9A3C" stroke-width="8"/></svg></div>
+        <div class="g g5"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="18" fill="#FF6464"/></svg></div>
+        <div class="g g6"><svg viewBox="0 0 100 100"><rect x="20" y="12" width="60" height="76" rx="6" fill="#FFD36B"/></svg></div>
+      </div>
+
+      <div class="logo-wrap">
+        <svg class="logo-mark" viewBox="0 0 600 300">
+          <rect x="6" y="6" width="588" height="288" rx="28" fill="#fff" stroke="#f0e6dc" stroke-width="6"/>
+          <text x="300" y="170" text-anchor="middle" font-family="Poppins,Arial" font-weight="700" font-size="72" fill="#3a2f24">MAGIZHAN</text>
+          <text x="300" y="235" text-anchor="middle" font-family="Poppins,Arial" font-weight="700" font-size="44" fill="#3a2f24">STORES</text>
+        </svg>
+        <h1 class="store-title">A. Singaravel</h1>
+        <div class="tagline">Fresh • Local • Trusted</div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>About Us</h2>
+        <p><strong>Magizhan Stores</strong> has proudly served Thanjavur for 3+ years. Managed by <b>Mr. A. Singaravel</b>, we bring you fresh groceries, dairy, snacks, and household items with love and trust.</p>
+      </section>
+
+      <section>
+        <h2>Products & Services</h2>
+        <div class="products-grid">
+          <article class="product-card"><img src="print.jpg" alt="Xerox"><div class="product-body"><div class="product-title">Xerox & Printing</div><div class="product-desc">Quick copy, print, scan & lamination.</div><div class="product-meta"><div class="chip">Service</div><div>7–10 PM</div></div></div></article>
+          <article class="product-card"><img src="masala.jpg" alt="Masala"><div class="product-body"><div class="product-title">Indian Masala</div><div class="product-desc">Authentic local spices & packets.</div><div class="product-meta"><div class="chip">Fresh</div><div>100g–1kg</div></div></div></article>
+          <article class="product-card"><img src="milk.jpg" alt="Milk"><div class="product-body"><div class="product-title">Tamil Nadu Milk</div><div class="product-desc">Daily supply from local dairies.</div><div class="product-meta"><div class="chip">Pure</div><div>1L / 500ml</div></div></div></article>
+          <article class="product-card"><img src="grocery.jpg" alt="Groceries"><div class="product-body"><div class="product-title">Staples</div><div class="product-desc">Rice, dal, oil, and essentials.</div><div class="product-meta"><div class="chip">Everyday</div><div>5kg / 1kg</div></div></div></article>
+       <article class="product-card"><img src="mobile.jpg" alt="Recharge"><div class="product-body"><div class="product-title">all</div><div class="product-desc">jio,airtel,BSNL etc...</div><div class="product-meta"><div class="chip">Everyday</div></div></div></article>
+      
+        </div>
+      </section>
+
+      <section>
+        <h2>Location</h2>
+        <p>Kurichi Subramaniyan Kovil Street, Keelavasal, Thanjavur, Tamil Nadu – 613001</p>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 <strong>Magizhan Stores</strong> — Open 7:00 AM – 10:00 PM
+    </footer>
+  </div>
+</body>
+</html>
